@@ -1,4 +1,43 @@
+@use 'variables' as *;
+
 .nav {
+    font-family: 'Kumbh Sans', sans-serif;
     display: flex;
     backdrop-filter: blur(16px);
+    
+    border: {
+        top: none;
+        left: none;
+        bottom: 3px solid $fg;
+        right: 3px solid $fg;
+    }
+
+    * {
+        display: flex;
+        align-items: center;
+
+        padding: {
+            top: 1rem;
+            bottom: 1rem;
+        }
+    }
+}
+
+.link {
+    backdrop-filter: none;
+    font-size: 18pt;
+    color: $fg;
+    display: block;
+    text-decoration: none;
+
+    padding: {
+        left: 1rem;
+        right: 1rem;
+    }
+
+    &:hover {
+        background-color: $fg;
+        color: black;
+        mix-blend-mode: screen;
+    }
 }
