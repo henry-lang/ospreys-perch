@@ -11,11 +11,15 @@ const links: { text: string; href: string }[] = [
 const Navbar = (): JSX.Element => {
     return (
         <nav className={styles.nav}>
-            {links.map((link, i) => (
+            <img className={styles.logo} src="/logo.svg"></img>
+
+            {links.map((link, i) =>
                 <Link href={link.href} key={i}>
-                    <a className={styles.link}>{link.text}</a>
+                    <a className={styles.link}>
+                        {link.text}
+                    </a>
                 </Link>
-            ))}
+            )}
         </nav>
     )
 }

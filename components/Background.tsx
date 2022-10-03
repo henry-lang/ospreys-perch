@@ -12,10 +12,11 @@ const Background = (props: Props): JSX.Element => {
         <div className={styles.wrapper}>
             <Image
                 {...props}
+                alt="Aerial of property"
                 layout="fill"
                 objectFit="cover"
                 quality={100}
-                placeholder="blur"
+                placeholder="empty"
             />
         </div>
     )
