@@ -5,7 +5,7 @@ import styles from '../styles/404.module.scss'
 const NotFound: NextPage = () => {
     return (
         <div className={styles.message}>
-            <p><b>404 Not Found:</b> This osprey hasn't perched yet!</p>
+            <p><b>404 Not Found:</b> This osprey hasn&lsquo;t perched yet!</p>
         </div>
     )
 }

@@ -9,7 +9,7 @@ interface Props {
 
 const Background = (props: Props): JSX.Element => {
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.image}>
             <Image
                 {...props}
                 alt="Aerial of property"

@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import styles from '../styles/Navbar.module.scss'
+import logo from '../public/logo.svg'
 
 const links: { text: string; href: string }[] = [
     { text: 'Properties', href: '/properties' },
@@ -11,7 +13,7 @@ const links: { text: string; href: string }[] = [
 const Navbar = (): JSX.Element => {
     return (
         <nav className={styles.nav}>
-            <img className={styles.logo} src="/logo.svg"></img>
+            <Image src={logo} alt="Osprey logo" />
 
             {links.map((link, i) =>
                 <Link href={link.href} key={i}>
