@@ -1,0 +1,39 @@
+:root {
+    --main-font: 'Kumbh Sans', sans-serif;
+    --fg: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url(../aerial.webp);
+}
+
+nav {
+    font-family: var(--main-font);
+    display: flex;
+    backdrop-filter: blur(16px);
+
+    border-bottom: 3px solid var(--fg);
+}
+
+nav * {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 5rem;
+}
+
+.link {
+    font-size: 18pt;
+    color: var(--fg);
+    text-decoration: none;
+
+    padding: 1rem;
+
+    &:hover {
+        background-color: var(--fg);
+    }
+}
