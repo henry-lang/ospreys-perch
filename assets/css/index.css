@@ -7,13 +7,55 @@ body {
     padding: 0;
     margin: 0;
     background-image: url(../aerial.webp);
+    background-size: cover;
+    font-family: var(--main-font);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--fg);
+}
+
+.backdrop-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: backdrop-filter-fade 1s ease-in-out calc(1s / 2) forwards; /* Added transition */
+}
+
+.content {
+    opacity: 0;
+    animation: content-fade 1s ease-in-out 1s forwards;
+}
+
+@keyframes backdrop-filter-fade {
+    from {
+        backdrop-filter: blur(0px);
+    }
+
+    to {
+        backdrop-filter: blur(5px);
+    }
+}
+
+@keyframes content-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+.background-image:hover {
+    backdrop-filter: blur(5px);
 }
 
 nav {
-    font-family: var(--main-font);
     display: flex;
     backdrop-filter: blur(16px);
-
     border-bottom: 3px solid var(--fg);
 }
 
@@ -30,10 +72,48 @@ nav * {
     font-size: 18pt;
     color: var(--fg);
     text-decoration: none;
+    margin: 1rem;
+    position: relative;
+    overflow: hidden; /* Added this line */
 
-    padding: 1rem;
+    /* New style for the underline */
+    position: relative;
+}
 
-    &:hover {
-        background-color: var(--fg);
-    }
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 2px;
+    background-color: var(--fg);
+    transition: opacity 300ms, transform 300ms;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+.link:hover::after,
+.link:focus::after {
+    transform: scale(1);
+}
+
+.title {
+    font-weight: 800;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.12);
+}
+
+.content main {
+    padding-left: 50px;
+}
+
+html.is-changing .transition-fade {
+    transition: opacity 0.25s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
 }
